@@ -347,7 +347,7 @@ footer > p { margin: 0; color: #b9c8d8; font-size: 11px; text-align: right; }
   .setup-steps { max-width: 760px; }
   .advantage-grid { grid-template-columns: repeat(2,1fr); row-gap: 38px; }
   .advantage-grid article:nth-child(3) { padding-left: 0; border-left: 0; }
-  footer { grid-template-columns: 1fr; padding-top: 35px; padding-bottom: 35px; }
+  footer.section-width { grid-template-columns: 1fr; padding-top: 35px; padding-bottom: 35px; }
   footer nav { flex-wrap: wrap; }
   footer > p { text-align: left; }
 }
@@ -356,8 +356,8 @@ footer > p { margin: 0; color: #b9c8d8; font-size: 11px; text-align: right; }
   .section-width { width: min(100% - 32px, 1110px); }
   .site-header { width: 100%; height: 84px; padding-inline: 16px; }
   .brand-logo { width: 184px; }
-  .login-button { display: none; }
-  .header-demo { min-height: 38px; padding: 0 15px; font-size: 12px; }
+  .header-actions { gap: 8px; }
+  .login-button, .header-demo { min-height: 38px; padding: 0 14px; font-size: 12px; white-space: nowrap; }
   .hero { min-height: auto; padding: 60px 0 80px; gap: 50px; }
   .hero-copy > p { font-size: 24px; }
   .hero h1 { font-size: clamp(42px,12vw,54px); }
@@ -386,6 +386,17 @@ footer > p { margin: 0; color: #b9c8d8; font-size: 11px; text-align: right; }
   .testimonial-grid blockquote { min-height: auto; padding: 28px 24px; }
   .final-cta { min-height: 400px; padding-top: 80px; padding-bottom: 80px; }
   footer nav { gap: 14px 22px; }
+}
+
+/* Phones: logo shrinks so Log in and Book a demo both fit beside it. */
+@media (max-width: 420px) {
+  .brand-logo { width: 140px; }
+  .login-button, .header-demo { padding: 0 11px; }
+}
+@media (max-width: 340px) {
+  .brand-logo { width: 112px; }
+  .header-actions { gap: 6px; }
+  .login-button, .header-demo { padding: 0 9px; font-size: 11px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
